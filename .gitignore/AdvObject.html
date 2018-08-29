@@ -1,0 +1,191 @@
+<!doctype>
+<html>
+
+<head> 
+<script> 
+	function sameObj(obj1){
+		this.hello = 'krishna';
+		return function hello(){
+			console.log('Hello');
+		}
+		 obj1;
+	}
+	var objA = {
+		name: 'Kris'
+	}
+	sameObj(objA);
+
+	objA === sameObj(objA);
+	
+	
+	var objOne= {
+    foo:'bar'
+	}
+
+	function callObj(obj){
+		return objOne;
+	}
+	var cloneObj = callObj(objOne);
+	cloneObj === callObj(objOne);
+
+	Math.sqrt(-5);
+
+	var inherit = Object.create({foo:'bar'});
+	inherit.extn = function(){
+		console.log('ddd');
+	}
+	console.dir(objOne)
+	console.dir(inherit);
+
+	function Test(name){
+		this.name= name
+	}
+	Test.prototype.gogo = function(){
+		console.log('hi');
+	}
+	var objA = new Test('ddd');
+	
+	//Extending Object it Cann't store in Class
+	objA.go = function(){
+		console.log('er');
+	}
+
+	console.dir( objA);
+
+	console.dir(Test);
+	  function creatPerson(name, age){
+    this.name = name;
+    this.age= age;
+    this.custom = function(){
+      console.log(this.name);
+    }
+  }
+
+  creatPerson.prototype.addNew = function(){
+    console.log('dfdf', this.name);
+  }
+  var objeCreat = Object.create(creatPerson)
+  console.dir(objeCreat)
+
+  var newFunc = new creatPerson();
+  newFunc.addNew();
+  newFunc.custom();
+  var dog = {
+    eat: function(name){
+      console.log(this.name = name);
+    }
+  }
+  dog.newFunc = function(color){
+    this.color = color;
+  }
+  console.dir(dog)
+  dog.newFunc('Wheat Color');
+  var newDog = Object.create(dog);
+  newDog.anotherFunc = function(name){
+    console.log(this);
+  }
+  newDog.anotherFunc()
+  newDog.eat('hehe');
+  console.dir(newDog)
+  function Constructor(){}
+  var x = new Constructor();
+
+  var a = Object.create(x);
+
+  console.dir(a);
+
+  
+  
+//Objects OOPS
+  var objA = {
+    name: 'Govinda',
+    methodOne: function(){
+      console.log(this);
+    }
+  }
+ 
+ 	var person = {
+		name: 'John'
+	};
+	person.salary = '10000$';
+	person['country'] = 'USA';
+	console.log(person)
+
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = objA;
+	objB.foo = 'bar';
+
+	delete objA.foo;
+	//delete objB.foo;
+
+	console.log(objA.foo);
+	console.log(objB.foo);
+var ObjOne = {
+    name: 'Hi'
+}
+delete ObjOne.name;
+var objTwo = Object.create(ObjOne);
+
+objTwo.name = 'Hello';
+
+objTwo.name
+ObjOne.name
+
+ //Arrays
+ var array1 = [];
+	var array2 = new Array(100);
+	var array3 = new Array('1',2,'3',4,5.6);
+	console.log(array1);
+	console.log(array2);
+	console.log(array3);
+	console.log(array3.length);
+var array = new Array('a', 'b', 'c', 'd', 'e');
+
+	  array[10] = 'f';
+	  
+	  array.length;
+
+	  var array = [1,5,3,4,5,1,4,3,4,5,6, 2];
+	console.log(array.indexOf(2));
+	//First Character Indexof will show
+	console.log(array.indexOf(2,3));
+
+  //Adding Fizz Bizzz
+  var fizzBuzz = 'fizz';
+	for(var count =1; count <= 20; count++){
+
+		if(count % 3 === 0){
+			fizzBuzz = 'Fizzz';
+			console.log( count, fizzBuzz)
+		}
+		else if(count % 5 ===0){
+			fizzBuzz = 'fizzBuzzz';
+			console.log( count, fizzBuzz)
+		}else{
+			fizzBuzz =undefined;
+			console.log(count, fizzBuzz);
+		}
+	}
+
+  //Palindrome 
+function resort(str){
+	var re = /[^A-Za-z0-9]/g;
+	str = str.toLowerCase().replace(re, '');
+	var len = str.length;
+	for(var i=0; i<len/2; i++){
+		if(str[i] !== str[len - i -1]){
+			return false;
+		}
+		return true;
+	}
+}
+resort('mad , am,');
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+	var person = {
+		name: 'John'
+	};
+	person.salary = '10000$';
+	person['country'] = 'USA';
+	console.log(person)
+
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = objA;
+	objB.foo = 'bar';
+
+	delete objA.foo;
+	//delete objB.foo;
+
+	console.log(objA.foo);
+	console.log(objB.foo);
+var ObjOne = {
+    name: 'Hi'
+}
+delete ObjOne.name;
+var objTwo = Object.create(ObjOne);
+
+objTwo.name = 'Hello';
+
+objTwo.name
+ObjOne.name
+
+var array1 = [];
+	var array2 = new Array(100);
+	var array3 = new Array('1',2,'3',4,5.6);
+	console.log(array1);
+	console.log(array2);
+	console.log(array3);
+	console.log(array3.length);
+var array = new Array('a', 'b', 'c', 'd', 'e');
+
+	  array[10] = 'f';
+	  
+	  array.length;
+
+	  var array = [1,5,3,4,5,1,4,3,4,5,6, 2];
+	console.log(array.indexOf(2));
+	console.log(array.indexOf(2,3));
+
+	var fizzBuzz = 'fizz';
+	for(var count =1; count <= 20; count++){
+
+		if(count % 3 === 0){
+			fizzBuzz = 'Fizzz';
+			console.log( count, fizzBuzz)
+		}
+		else if(count % 5 ===0){
+			fizzBuzz = 'fizzBuzzz';
+			console.log( count, fizzBuzz)
+		}else{
+			fizzBuzz =undefined;
+			console.log(count, fizzBuzz);
+		}
+	}
+
+	function resort(str){
+		var re = /[^A-Za-z0-9]/g;
+ 		str = str.toLowerCase().replace(re, '');
+		var len = str.length;
+		for(var i=0; i<len/2; i++){
+			if(str[i] !== str[len - i -1]){
+				return false;
+			}
+			return true;
+		}
+	}
+resort('mad , am,');
